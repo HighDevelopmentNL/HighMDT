@@ -1,0 +1,217 @@
+/*************** 1.Variables ***************/
+$white: #ffffff;
+$dark-grey: #616a71;
+$grey: #828c94;
+$grey-light: #a3adb5;
+$grey-lighter: #cbd3da;
+$grey-lightest: #edf0f3;
+$black: #000000;
+
+$light-color: #ceddec;
+$dark-color: #536987;
+
+$body-bg: #e6ecf3;
+$card-bg: #f4f5fb;
+$light-bg: #f4f5fb;
+
+$border-bg: #e1e5f1;
+$form-border: #c4c9da;
+
+$link-color: #0176c0;
+$font-color: #2e323c;
+$font-color-light: #8796af;
+
+$primary-color: #4472ab;
+$secondary-color: #877dd6;
+// #124079 #3778d4 #50cdd0 #0176c0 #7382ba #749eb9 #7b6bef;
+
+$header-bg: #001838;
+$header-text-color: #758cad;
+$header-text-light-color: #758fb3;
+
+$navbar-bg: #f4f5fb;
+$navbar-text: #5d5f69;
+$navbar-link: #8e909a;
+$navbar-link-active: #5d5f69;
+$navbar-link-disabled: #bfc0c5;
+
+$custom-navbar-link: #6b7f8a;
+$custom-navbar-active: #009688;
+
+
+$retail-blue: #1177be;
+$retail-red: #fd7274;
+$retail-green: #00b894;
+$retail-yellow: #1177be;
+
+
+/* ------------------ Color Pallet ------------------ */
+
+$red: #fd7274;
+$light-red: #f2d6d3;
+$lighter-red: #ffe7e7;
+$dark-red: #b50000;
+$darker-red: #ea0000;
+
+$green: #9ec94a;
+$light-green: #ddf2b5;
+$lighter-green: #e2ffe0;
+$dark-green: #1eb9c9;
+$green-shade-one: #1baec7;
+
+$yellow: #f9be52;
+$light-yellow: #faeab9;
+$lighter-yellow: #fff6e0;
+$dark-yellow: #ffa63e;
+
+$blue: #1da8df;
+$light-blue: #b2e5f0;
+$lighter-blue: #e7f8ff;
+$dark-blue: #1177be;
+$darker-blue: #012952;
+
+$dark-pink: #f66060;
+
+
+// Special Colors
+$jungle-green: #41ca94;
+$lime-green: #89bf52;
+$royal-orange: #fd8448;
+$melon-pink: #fd7279;
+$golden-yellow: #ffb445;
+
+
+// Apex Tooltip Colors
+$apex-blue: #67caf0;
+$apex-sea-blue: #80bcdc;
+$apex-red: #fd7274;
+$apex-green: #a5ca7b;
+$apex-dark-green: #009688;
+$apex-orange: #f68d60;
+$apex-orange-light: #f2d6d3;
+$apex-yellow: #f9be52;
+$apex-pink: #ff8087;
+$apex-dark-pink: #c46aa7;
+$apex-light-pink: #f5a5c4;
+$apex-lavandar: #AC92EC;
+$dark-lavandar: #9778df;
+
+
+// Bootstrap Colors
+
+$info: #00ade9;
+$success: #56b160;
+$warning: #fba542;
+$danger: #f75e5e;
+
+
+// $info: #51bcda;
+// $success: #6bd098;
+// $warning: #fbc658;
+// $danger: #ff7259;
+
+// $info: #008ad0;
+// $success: #07ab9d;
+// $warning: #fbb05e;
+// $danger: #f35958;
+
+
+// Social Colors
+$facebook: #3B5998;
+$twitter: #55ACEE;
+$linkedin: #007BB5;
+$gplus: #E02F2F;
+
+
+// Table BG
+$table-head-bg: #5f7082;
+
+
+
+
+
+
+/*************** 2.Mixins ***************/
+
+// Gradients
+@mixin linear-gradient($fromColor, $toColor) {
+	background-color: $toColor; /* Fallback Color */
+	background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(right, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image: -moz-linear-gradient(right, $fromColor, $toColor); /* FF3.6 */
+	background-image: -ms-linear-gradient(right, $fromColor, $toColor); /* IE10 */
+	background-image: -o-linear-gradient(right, $fromColor, $toColor); /* Opera 11.10+ */
+	background-image: linear-gradient(right, $fromColor, $toColor);
+}
+@mixin linear-gradient-tb($top, $bottom) {
+	background: $top; /* Old browsers */
+	background: -moz-linear-gradient(top, $top 0%, $bottom 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, $top 0%,$bottom 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, $top 0%,$bottom 100%); /* IE10+ */
+	background: linear-gradient(to bottom, $top 0%,$bottom 100%); /* W3C */
+}
+
+// Transition
+@mixin transition($transition-property, $transition-time, $method) {
+	-webkit-transition: $transition-property $transition-time $method;
+	-moz-transition: $transition-property $transition-time $method;
+	-ms-transition: $transition-property $transition-time $method;
+	-o-transition: $transition-property $transition-time $method;
+	transition: $transition-property $transition-time $method;
+}
+
+// Box Sizing
+@mixin box-sizing($string){
+	-webkit-box-sizing: $string;
+	-moz-box-sizing: $string;
+	box-sizing: $string;
+}
+
+// Box Shadow
+@mixin box-shadow($off-y, $off-x, $blur, $color){
+	-moz-box-shadow: $off-y $off-x $blur $color; /* FF3.5+ */
+	-webkit-box-shadow: $off-y $off-x $blur $color; /* Saf3.0+, Chrome */
+	box-shadow: $off-y $off-x $blur $color; /* Opera 10.5, IE9 */
+}
+
+@mixin box-shadow-inset($top, $left, $blur, $color, $inset:"") {
+	-webkit-box-shadow: $top $left $blur $color $inset;
+	-moz-box-shadow: $top $left $blur $color $inset;
+	box-shadow: $top $left $blur $color $inset;
+}
+
+// Border Radius
+@mixin roundedCorners($size) {
+	-webkit-border-radius: $size + px;
+	-moz-border-radius: $size + px;
+	border-radius: $size + px;
+}
+
+@mixin roundedCornersAll($size1, $size2, $size3, $size4) {
+	-webkit-border-radius: $size1 $size2 $size3 $size4;
+	-moz-border-radius: $size1 $size2 $size3 $size4;
+	border-radius: $size1 $size2 $size3 $size4;
+}
+
+@mixin transform($args){
+	-webkit-transform: $args;
+	-moz-transform: $args;
+	-o-transform: $args;
+	-ms-transform: $args;
+	transform: $args;
+}
+
+// Opacity
+@mixin opacity($opacity) {
+	opacity: $opacity / 100;
+	filter: alpha(opacity=$opacity);
+}
+
+
+
+
+
+
+

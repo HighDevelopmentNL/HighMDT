@@ -1,0 +1,25 @@
+.profile-container {
+    width: 100%;
+}
+
+.search-panel {
+    width: 30%;
+    margin-top: 2vh;
+    float: left;
+}
+
+.profile-panel {
+    margin-top: 2vh;
+    width:50%;
+    float: left;
+}
+
+.profile-avatar > img {
+    border: 1px solid #004682;
+}
+
+.profile-reports-panel {
+    width:50%;
+    float: left;
+}
+

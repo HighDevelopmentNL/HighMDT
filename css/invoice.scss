@@ -1,0 +1,54 @@
+// Importing Sass Variables
+@import 'variables.scss';
+
+
+/*************** Invoice Page ***************/
+
+.invoice-container {
+	padding: 0;
+	background-color: $white;
+	border: 1px solid darken($border-bg, 5%);
+	.invoice-header {
+		padding: 1rem 1.5rem;
+		.invoice-logo {
+			margin: 0;
+			display: inline-block;
+			font-size: 1.7rem;
+			color: $dark-grey;
+			font-weight: 700;
+			transition: all 0.5s ease;
+		}
+	}
+	.invoice-address {
+		background: lighten($body-bg, 3%);
+		padding: 1rem 1.5rem;
+		line-height: 130%;
+		font-size: 1rem;
+	}
+	address {
+		margin-top: 10px;
+		font-size: .8rem;
+		color: $font-color-light;
+	}
+	.invoice-details {
+		margin-top: 2.5rem;
+		text-align: right;
+	}
+	.invoice-body {
+		padding: 3rem 1.5rem 1rem 1.5rem;
+	}
+	.invoice-footer {
+		background: lighten($body-bg, 3%);
+		padding: 1rem 1.5rem;
+		text-align: center;
+		font-size: .7rem;
+	}
+	.invoice-payment {
+		background: lighten($body-bg, 3%);
+		padding: 0 1.5rem 0 1.5rem;
+		text-align: right;
+		font-size: .8rem;
+		line-height: 200%;
+	}
+}
+

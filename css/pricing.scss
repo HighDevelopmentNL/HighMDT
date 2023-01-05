@@ -1,0 +1,88 @@
+// Importing Sass Variables
+@import 'variables.scss';
+
+
+/*************** Pricing Plans ***************/
+
+.pricing-plan {
+	margin: 0 0 20px 0;
+	width: 100%;
+	position: relative;
+	background: $body-bg;
+	@include roundedCornersAll(3px, 3px, 3px, 3px);
+	.pricing-header {		
+		padding: 0;
+		margin-bottom: 10px;
+		text-align: center;
+		@include linear-gradient-tb($apex-blue, $blue);
+		@include roundedCornersAll(3px, 3px, 0px, 0px);
+		.pricing-title {
+			font-size: 1.2rem;
+			color: $white;
+			padding: 10px 0;
+			text-transform: uppercase;
+			font-weight: 500;
+			margin: 0;
+			text-shadow: 0 30px 10px rgba(0, 0, 0, 0.15);
+		}
+		.pricing-cost {
+			color: $white;
+			padding: 15px 0;
+			font-size: 2.5rem;
+			font-weight: 700;
+			text-shadow: 0 30px 10px rgba(0, 0, 0, 0.15);
+		}
+		.pricing-save {
+			color: $white;
+			padding: 10px 0;
+			font-size: 1rem;
+			font-weight: 700;
+		}
+		&.green {
+			@include linear-gradient-tb($apex-green, $apex-dark-green);
+		}
+		&.orange {
+			@include linear-gradient-tb($apex-yellow, $apex-orange);
+		}
+	}
+	.pricing-features {
+		padding: 0;
+		margin: 20px 0;
+		text-align: left;
+		li {
+			padding: 15px 15px 15px 40px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			position: relative;
+			line-height: 100%;
+			&:before {
+				position: absolute;
+				left: 15px;
+				top: 15px;
+				font-size: 1rem;
+				color: $black;
+				content: "\e9ec";
+				font-family: 'icomoon';
+			}
+		}
+	}
+	.pricing-footer {
+		@include roundedCornersAll(0, 0, 3px, 3px);
+		text-align: center;
+		padding: 10px 0 10px 0;
+	}
+}
+
+@media (max-width: 767px) {
+	.pricing-plan {
+		.pricing-header {
+			text-align: center;
+			i {
+				display: block;
+				float: none;
+				margin-bottom: 20px;
+			}
+		}
+	}
+}

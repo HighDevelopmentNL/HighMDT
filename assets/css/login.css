@@ -1,0 +1,25 @@
+.login-container {
+    position: relative;
+    top: 25vh;
+    width: 80%;
+    margin: auto;
+}
+
+.login-content {
+    width: 50%;
+    margin: auto;
+    padding: 2vh 2vw;
+}
+
+.btn-login {
+    width: 100%;
+    background: #004682!important;
+    border: 0 solid transparent!important;
+    transition: background 500ms;
+}
+
+.btn-login:hover {
+    width: 100%;
+    background: #0066bd!important;
+    border: 0 solid transparent!important;
+}

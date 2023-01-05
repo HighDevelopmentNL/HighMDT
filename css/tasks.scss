@@ -1,0 +1,481 @@
+// Importing Sass Variables
+@import 'variables.scss';
+
+
+/*************** Tasks ***************/
+
+// .task-checkbox {
+// 	position: relative;
+// 	input,
+// 	.label,
+// 	.check {
+// 		display: inline-block;
+// 		vertical-align: middle;
+// 	}
+// 	.check {
+// 		position: absolute;
+// 		top: 0;
+// 		right: 0;
+// 	}
+// 	input[type="checkbox"] {
+// 		opacity: 0;
+// 		width: 100%;
+// 		height: 100%;
+// 		position: absolute;
+// 		cursor: pointer;
+// 		&:focus {
+// 			outline: 0;
+// 		}
+// 		&:checked+.ripple-container {
+// 			.check-off {
+// 				border-color: $black;
+// 			}
+// 			.check-on {
+// 				-webkit-transform: scale(0.8);
+// 				-moz-transform: scale(0.8);
+// 				-ms-transform: scale(0.8);
+// 				-o-transform: scale(0.8);
+// 				transform: scale(0.8);
+// 				-webkit-transition: -webkit-transform 0.3s;
+// 				-moz-transition: -moz-transform 0.3s;
+// 				transition: transform 0.3s;
+// 				color: $black;
+// 			}
+// 			.check-ripple {
+// 				&:before,
+// 				&:after {
+// 					-webkit-transition: all 0.65s cubic-bezier(0.25, 0.8, 0.25, 1);
+// 					-moz-transition: all 0.65s cubic-bezier(0.25, 0.8, 0.25, 1);
+// 					transition: all 0.65s cubic-bezier(0.25, 0.8, 0.25, 1);
+// 					opacity: 0;
+// 				}
+// 				&:before {
+// 					-webkit-transform: scale(3);
+// 					-moz-transform: scale(3);
+// 					-ms-transform: scale(3);
+// 					-o-transform: scale(3);
+// 					transform: scale(3);
+// 				}
+// 				&:after {
+// 					-webkit-transform: scale(1.5);
+// 					-moz-transform: scale(1.5);
+// 					-ms-transform: scale(1.5);
+// 					-o-transform: scale(1.5);
+// 					transform: scale(1.5);
+// 				}
+// 			}
+// 		}
+// 		+.ripple-container {
+// 			width: auto;
+// 			position: relative;
+// 			display: inline-block;
+// 			width: 25px;
+// 			height: 25px;
+// 			top: 0;
+// 			pointer-events: none;
+// 			&:before {
+// 				content: "";
+// 				position: absolute;
+// 				@include roundedCorners(2);
+// 				display: block;
+// 				height: auto;
+// 				left: 0;
+// 				top: 0;
+// 				right: 0;
+// 				bottom: 0;
+// 				-webkit-transition: all 0.5s;
+// 				-moz-transition: all 0.5s;
+// 				transition: all 0.5s;
+// 			}
+// 			.check-off {
+// 				position: absolute;
+// 				width: 25px;
+// 				height: 25px;
+// 				left: 0;
+// 				top: 0;
+// 				@include roundedCorners(2);
+// 				border: 2px solid #48b378;
+// 				transition: border-color ease 0.28s;
+// 			}
+// 			.check-on {
+// 				-webkit-transform: scale(0);
+// 				-moz-transform: scale(0);
+// 				-ms-transform: scale(0);
+// 				-o-transform: scale(0);
+// 				transform: scale(0);
+// 				-webkit-transition: all 0s;
+// 				-moz-transition: all 0s;
+// 				transition: all 0s;
+// 				position: absolute;
+// 				left: 0;
+// 				top: 2px;
+// 				width: 100%;
+// 				height: 100%;
+// 				text-align: center;
+// 				line-height: 25px;
+// 			}
+// 			.check-ripple {
+// 				&:before,
+// 				&:after {
+// 					-webkit-transition: all 0s;
+// 					-moz-transition: all 0s;
+// 					transition: all 0s;
+// 					-webkit-transform: scale(0);
+// 					-moz-transform: scale(0);
+// 					-ms-transform: scale(0);
+// 					-o-transform: scale(0);
+// 					transform: scale(0);
+// 					content: "";
+// 					position: absolute;
+// 					display: block;
+// 					@include roundedCorners(50);
+// 					width: 25px;
+// 					height: 25px;
+// 					opacity: 1;
+// 				}
+// 				&:before {
+// 					background-color: rgba(255, 255, 255, 0.35);
+// 				}
+// 				&:after {
+// 					background-color: rgba(219, 213, 213, 0.6);
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+// .task-container {
+// 	color: $black;
+// 	position: relative;
+// 	@include roundedCorners(0);
+// 	&.high-priority {
+// 		@include roundedCornersAll(2px, 0, 0, 2px);
+// 		// @include linear-gradient(darken($link-color, 5%), $link-color);
+// 		background: $body-bg;
+// 		z-index: 1;
+// 		ul {
+// 			li {
+// 				// border-top: 1px solid rgba(255, 255, 255, 0.3);
+// 				border-top: 1px solid rgba(0, 0, 0, 0.1);
+// 			}
+// 		}
+// 	}
+// 	&.low-priority {
+// 		@include roundedCornersAll(0, 2px, 2px, 0);
+// 		// @include linear-gradient(darken($apex-pink, 5%), $apex-pink);
+// 		background: lighten($body-bg, 2%);
+// 		ul {
+// 			li {
+// 				// border-top: 1px solid lighten($apex-pink, 7%);
+// 				border-top: 1px solid rgba(0, 0, 0, 0.1);
+// 			}
+// 		}
+// 	}
+// 	h4.task-header {
+// 		padding: 1.5rem 1.5rem 0 1.5rem;
+// 		font-weight: 300;
+// 		font-size: 1.5rem;
+// 	}
+// 	.tasks-list {
+// 		padding: 1rem 1.5rem;
+// 		.task-name {
+// 			margin-bottom: 15px;
+// 			font-size: 1rem;
+// 			font-weight: 500;
+// 		}
+// 		.task-desc {
+// 			margin-bottom: 15px;
+// 			font-size: .9rem;
+// 			line-height: 180%;
+// 			font-weight: 300;
+// 			opacity: 0.6;
+// 		}
+// 		.task-time {
+// 			font-weight: 300;
+// 			font-size: .8rem;
+// 		}
+// 		.task-types {
+// 			margin-top: 15px;
+// 			.badge {
+// 				@include roundedCorners(0);
+// 				background: $apex-red;
+// 				color: $white;
+// 			}
+// 		}
+// 		ul {
+// 			position: relative;
+// 			z-index: 1;
+// 			li {
+// 				@include transition(all,
+// 				0.3s,
+// 				ease-out);
+// 				padding: 1rem 0;
+// 				position: relative;
+// 				.label {
+// 					@include transition(all,
+// 					0.3s,
+// 					ease-out);
+// 					opacity: 1;
+// 					line-height: 120%;
+// 					margin-right: 60px;
+// 				}
+// 				.task-msg {
+// 					@include transition(all,
+// 					0.3s,
+// 					ease-out);
+// 					right: 35px;
+// 					top: 12px;
+// 					position: absolute;
+// 					font-size: .75rem;
+// 					opacity: 0;
+// 				}
+// 				&.task-checked {
+// 					.task-msg {
+// 						-webkit-animation: fadeInOut 2s;
+// 						-moz-animation: fadeInOut 2s;
+// 						animation: fadeInOut 2s;
+// 					}
+// 					.label {
+// 						opacity: 0.5;
+// 						text-decoration: line-through;
+// 					}
+// 				}
+// 				&:last-child {
+// 					padding-bottom: 0;
+// 				}
+// 				&:first-child {
+// 					border-top: 0;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+// @media (max-width: 767px) {
+// 	.task-container {
+// 		&.high-priority {
+// 			margin-bottom: 1rem;
+// 			@include roundedCorners(10);
+// 		}
+// 		&.low-priority {
+// 			margin-bottom: 1rem;
+// 			@include roundedCorners(10);
+// 		}
+// 	}
+// }
+
+// @-webkit-keyframes fadeInOut {
+// 	0% {
+// 		opacity: 0;
+// 		-webkit-transform: translate3d(10px, -50%, 0);
+// 	}
+// 	30% {
+// 		opacity: 1;
+// 		-webkit-transform: translate3d(0, -50%, 0);
+// 	}
+// 	75% {
+// 		opacity: 1;
+// 		-webkit-transform: translate3d(0, -50%, 0);
+// 	}
+// 	100% {
+// 		opacity: 0;
+// 		-webkit-transform: translate3d(-10px, -50%, 0);
+// 	}
+// }
+
+// @-moz-keyframes fadeInOut {
+// 	0% {
+// 		opacity: 0;
+// 		-moz-transform: translate3d(10px, -50%, 0);
+// 	}
+// 	30% {
+// 		opacity: 1;
+// 		-moz-transform: translate3d(0, -50%, 0);
+// 	}
+// 	75% {
+// 		opacity: 1;
+// 		-moz-transform: translate3d(0, -50%, 0);
+// 	}
+// 	100% {
+// 		opacity: 0;
+// 		-moz-transform: translate3d(-10px, -50%, 0);
+// 	}
+// }
+
+.tasks-search-container {
+	margin-bottom: 2rem;
+	position: relative;
+	.tasks-search {
+	  position: relative;
+	  margin-right: 50px;
+		.form-control {
+			@include roundedCorners(3);
+			padding: .7rem 1rem;
+		}
+	}
+	.add-btn {
+		@include roundedCornersAll (0, 3, 3, 0);
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+}
+
+
+
+.tasks-title-bar {
+	margin-bottom: 1.5rem;	
+	h2 {
+		margin: 0;
+		font-weight: 400;
+		span.date {
+			color: lighten($black, 60%);
+			font-size: 1rem;
+			margin-left: 5px;
+		}
+	}
+}
+
+.tasks-block {
+	background: $card-bg;
+	padding: 1rem .5rem 1rem 1.5rem;
+	margin-bottom: 1.2rem;
+	transition: all 0.5s ease;
+	color: lighten($black, 20%);
+	.task-header {
+		margin-bottom: 1rem;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		.circle {
+			border: 2px solid darken($card-bg, 20%);
+			color: $white;
+			width: 40px;
+			height: 40px;
+			line-height: 36px;
+			vertical-align: middle;
+			font-size: 1rem;
+			text-align: center;
+			@include roundedCorners(30);
+		}
+		.usr-name {
+			margin-left: 5px;
+		}
+		.actions {
+			margin-left: auto;
+			display: block;
+			color: $black;
+			width: 30px;
+			height: 30px;
+			display: flex;
+			@include roundedCorners(30);
+			align-items: center;
+			justify-content: center;
+			-webkit-transition: all 0.5s;
+			-moz-transition: all 0.5s;
+			transition: all 0.5s;
+			&:hover {
+				background: rgba(103, 202, 240, 0.2);
+			}
+			&:focus {
+				outline: none;
+				background: rgba(246, 141, 96, 0.2);
+			}
+		}
+	}
+	&.red {
+		border-left: 2px solid $apex-red;
+		.task-header {
+			.circle {
+				border: 2px solid $apex-red;
+				color: $apex-red;
+			}
+		}
+	}
+	&.green {
+		border-left: 2px solid $apex-green;
+		.task-header {
+			.circle {
+				border: 2px solid $apex-green;
+				color: $apex-green;
+			}
+		}
+	}
+	&.blue {
+		border-left: 2px solid $apex-blue;
+		.task-header {
+			.circle {
+				border: 2px solid $apex-blue;
+				color: $apex-blue;
+			}
+		}
+	}
+	&.yellow {
+		border-left: 2px solid $apex-yellow;
+		.task-header {
+			.circle {
+				border: 2px solid $apex-yellow;
+				color: $apex-yellow;
+			}
+		}
+	}
+	&.pink {
+		border-left: 2px solid $apex-pink;
+		.task-header {
+			.circle {
+				border: 2px solid $apex-pink;
+				color: $apex-pink;
+			}
+		}
+	}
+	&.orange {
+		border-left: 2px solid $apex-orange;
+		.task-header {
+			.circle {
+				border: 2px solid $apex-orange;
+				color: $apex-orange;
+			}
+		}
+	}
+	&.lavandar {
+		border-left: 2px solid $apex-lavandar;
+		.task-header {
+			.circle {
+				border: 2px solid $apex-lavandar;
+				color: $apex-lavandar;
+			}
+		}
+	}
+	&.jungle-green {
+		border-left: 2px solid $jungle-green;
+		.task-header {
+			.circle {
+				border: 2px solid $jungle-green;
+				color: $jungle-green;
+			}
+		}
+	}
+	&.dark-blue {
+		border-left: 2px solid $blue;
+		color: $blue;
+		.task-header {
+			.circle {
+				border: 2px solid $blue;
+				color: $blue;
+			}
+		}
+	}
+	.task-body {
+		p.time {
+			font-size: .7rem;
+			color: rgba(0, 0, 0, 0.4);
+			font-weight: 500;
+			margin-bottom: 5px;
+		}
+		h5 {
+			font-size: .925rem;
+			font-weight: 500;
+			line-height: 130%;
+			margin: 0;
+		}
+	}
+}
